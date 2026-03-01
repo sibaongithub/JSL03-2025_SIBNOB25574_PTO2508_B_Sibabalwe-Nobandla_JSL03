@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="assets/favicon.svg" />
+    <title>Kanban — Launch Career</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              primary: '#635FC7',
+              primarySoft: '#A8A4FF',
+              bgLight: '#F4F7FD',
+              panel: '#FFFFFF',
+              muted: '#828FA3',
+              divider: 'rgba(32,33,44,0.06)',
+              blueDot: '#4CB3E6',
+              greenDot: '#3ECF8E'
+            },
+            boxShadow: { card: '0 6px 18px rgba(26,30,43,0.06)' }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root { --sidebar-pad: 24px; }
+      .dot { width:10px; height:10px; border-radius:9999px; display:inline-block; }
+      .active-pill {
+        margin-left: calc(var(--sidebar-pad) * -1);
+        width: calc(100% + var(--sidebar-pad));
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+      }
+      html,body { height:100%; margin:0; }
+      @media (max-width: 767px) { aside { display:none; } .mobile-title { font-size: 24px; line-height: 30px; } }
+      @media (min-width: 768px) { .col-fixed { width: 320px; } }
+      .col-fixed, .card, .active-pill { transition: all 180ms ease-in-out; }
+    </style>
+  </head>
+  <body class="bg-bgLight min-h-screen font-sans text-neutral800 antialiased">
+    <div class="min-h-screen flex w-full">
+      <aside class="hidden md:flex flex-col bg-white border-r" style="border-right:1px solid rgba(32,33,44,0.06); width:240px; padding:24px;">
+        <div><img src="assets/logo-light.svg" alt="Kanban logo" class="w-36" /></div>
+        <div class="mt-4 flex flex-col gap-3">
+          <h4 class="text-[12px] tracking-wider text-muted font-semibold">ALL BOARDS <span class="text-muted opacity-80">(1)</span></h4>
+          <div class="relative overflow-visible">
+            <button class="active-pill bg-primary text-white font-semibold py-3 px-4 flex items-center gap-3 shadow-sm">
+              <img src="assets/icon-board.svg" alt="" class="w-4 h-4" />
+              <span class="text-[15px] leading-[23px] font-bold">Launch Career</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex-1"></div>
+      </aside>
+
+      <main class="flex-1 min-h-screen">
+        <div class="md:hidden bg-white border-b" style="border-bottom:1px solid rgba(32,33,44,0.06);">
+          <div class="px-4 py-3 flex items-center gap-3">
+            <img src="assets/logo-light.svg" alt="logo" class="w-9" />
+            <div class="flex items-center gap-2">
+              <h3 class="mobile-title font-bold leading-[30px]">Launch Career</h3>
+              <svg width="14" height="14" viewBox="0 0 24 24" class="opacity-80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9l6 6 6-6" stroke="#20212C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:block bg-white" style="border-bottom:1px solid rgba(32,33,44,0.06);">
+          <div class="px-8 py-4">
+            <h2 class="text-[18px] font-bold leading-[23px]">Launch Career</h2>
+          </div>
+        </div>
+
+        <div class="px-6 md:px-10 py-6">
+          <div class="flex flex-col md:flex-row md:items-start md:gap-8">
+            <div class="col-fixed mb-6 md:mb-0">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="dot" style="background:#4CB3E6"></span>
+                <h4 class="text-[12px] font-semibold leading-[15px]">TO DO</h4>
+                <span class="text-[13px] text-muted opacity-80">(4)</span>
+              </div>
+              <div class="flex flex-col gap-4">
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Launch Epic Career 🚀</article>
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Conquer React 🧩</article>
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Understand Databases ⚙️</article>
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Crush Frameworks 🧭</article>
+              </div>
+            </div>
+
+            <div class="col-fixed mb-6 md:mb-0">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="dot" style="background:#635FC7"></span>
+                <h4 class="text-[12px] font-semibold leading-[15px]">DOING</h4>
+                <span class="text-[13px] text-muted opacity-80">(2)</span>
+              </div>
+              <div class="flex flex-col gap-4">
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Master JavaScript 💛</article>
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Never Give Up 🏆</article>
+              </div>
+            </div>
+
+            <div class="col-fixed">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="dot" style="background:#3ECF8E"></span>
+                <h4 class="text-[12px] font-semibold leading-[15px]">DONE</h4>
+                <span class="text-[13px] text-muted opacity-80">(2)</span>
+              </div>
+              <div class="flex flex-col gap-4">
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Explore ES6 Features 🚀</article>
+                <article class="card bg-panel rounded-[12px] p-3 shadow-card text-[13px] leading-[23px] font-bold">Have fun 🥳</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
